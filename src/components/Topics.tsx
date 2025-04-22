@@ -1,5 +1,7 @@
 import React from 'react'
 import CourseProgress from './CourseProgress'
+import { topics } from '@/data/dummy'
+import TopicCard from './TopicCard'
 
 const Topics = () => {
   return (
@@ -8,6 +10,12 @@ const Topics = () => {
             Topics for This Course
         </h2>
         <CourseProgress progress={60} />
+
+        {
+          topics.map((oneTopic)=>(
+            <TopicCard topic={oneTopic} />
+          ))
+        }
     </div>
   )
 }
