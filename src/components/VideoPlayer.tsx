@@ -24,7 +24,7 @@ const VideoPlayer = () => {
     },[watched])
   return (
     <div className={`course-video w-full h-fit sticky top-0 z-20 ${isVideoWide? "md:sticky":"md:relative"}`}>
-      <div className={`w-full aspect-video ${isVideoWide? "h-[65vh]":"md:aspect-video"} overflow-hidden rounded-lg drop-shadow-md`}>
+      <div className={`w-full aspect-video ${isVideoWide? "h-[480px]":"md:aspect-video"} overflow-hidden rounded-lg drop-shadow-md`}>
           <ReactPlayer width={"100%"} height={"100%"} style={{position:"absolute", top:0,left:0}} ref={ref} url={"https://www.youtube.com/watch?v=54ls40kio2w"} controls onProgress={(progress)=> isFinished(progress)} />
       </div>
           <Button onClick={toggleWide} className={`absolute -bottom-10 right-4 !rounded-full cursor-pointer hidden md:block drop-shadow-md`} variant={"outline"}>
