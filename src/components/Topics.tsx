@@ -13,7 +13,7 @@ const Topics = () => {
 
         {
           topics.map((oneTopic)=>(
-            <TopicCard topic={oneTopic} />
+            <TopicCard key={crypto.randomUUID()} topic={oneTopic} />
           ))
         }
     </div>

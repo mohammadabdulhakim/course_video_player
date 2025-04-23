@@ -10,17 +10,12 @@ const topics: Topic[] = [
                 status: "Watched",
             },
             {
-                title: "Introduction",
-                type: "video",
-                status: null,
-            },
-            {
                 title: "Course Overview",
                 type: "video",
                 status: null,
             },
             {
-                title: "Course Overview",
+                title: "Course Overview Exam",
                 type: "exam",
                 questions: 0,
                 durationInMin: 10,

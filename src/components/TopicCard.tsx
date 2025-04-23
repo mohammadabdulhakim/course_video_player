@@ -16,7 +16,7 @@ const TopicCard = ({topic}:{topic:Topic}) => {
 
         {
             topic.subTopics.map((subTopic)=>(
-                <>
+                <div key={crypto.randomUUID()}>
                     <div className="flex gap-2 items-center justify-between">
                         <div className="flex gap-2 items-center">
                             {subTopic.type == "pdf"
@@ -44,7 +44,7 @@ const TopicCard = ({topic}:{topic:Topic}) => {
                         </div>
                     </div>
                     <hr className="my-2" />
-                </>
+                </div>
             ))
         }
     </div>

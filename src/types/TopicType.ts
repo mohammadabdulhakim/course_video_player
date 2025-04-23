@@ -1,15 +1,15 @@
 
 interface SubTopic {
-    title: String,
-    questions?: Number,
-    durationInMin?: Number,
+    title: string,
+    questions?: number,
+    durationInMin?: number,
     type: "video" | "pdf" | "exam",
     status: "Watched" | "Read" | "Done" | null,
 }
 
 interface Topic {
-    weeks: String,
-    title: String,
-    desc: String,
+    weeks: string,
+    title: string,
+    desc: string,
     subTopics: SubTopic[];
 }
