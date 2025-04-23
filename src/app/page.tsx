@@ -3,20 +3,29 @@
 import Header from "@/components/Header";
 import Topics from "@/components/Topics";
 import VideoPlayer from "@/components/VideoPlayer";
+import useVideoProps from './../store/useVideoProps';
 
 export default function Home() {
+  const {isVideoWide} = useVideoProps();
  
   return (
     <main>
       <Header />
 
-      <div className="flex flex-row justify-between py-2 md:py-4 px-2 md:px-4 lg:px-8 gap-6 lg:gap-10">
-        <div className="flex flex-2 ">
+        <div className="course-page" 
+        style={isVideoWide ?{
+          gridTemplateColumns: "1fr", 
+          gridTemplateAreas: `
+            "video"
+            "materials"
+            "topics"
+            "comments"`
+          }:{}}>
           <VideoPlayer />
+          <Topics />        
+          <div className="course-materials">courseMaterial</div>
+          <div className="course-comments">Comments</div>
         </div>
-
-        <Topics />        
-      </div>
     </main>
   );
 }

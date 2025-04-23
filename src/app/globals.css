@@ -124,3 +124,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.course-page{
+  @apply py-2 md:py-4 px-2 md:px-4 lg:px-8 gap-6 lg:gap-10 grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "video"
+  "materials"
+  "topics"
+  "comments"
+  ;
+}
+
+@media (min-width: 768px) {
+  .course-page{
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "video topics"
+    "materials topics"
+    "comments topics"
+    ;
+  }
+} 
+
+.course-topics{
+  grid-area: topics;
+}
+.course-video{
+  grid-area: video;
+}
+.course-materials{
+  grid-area: materials;
+}
+.course-comments{
+  grid-area: comments;
+}
