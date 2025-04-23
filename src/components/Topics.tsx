@@ -1,9 +1,11 @@
 import React from 'react'
 import CourseProgress from './CourseProgress'
-import { topics } from '@/data/dummy'
 import TopicCard from './TopicCard'
+import useTopicsStore from '@/store/useTopicsStore';
 
 const Topics = () => {
+  const {topics} = useTopicsStore();
+
   return (
     <div className='course-topics flex items-start flex-col gap-10 '>
         <h2 className='text-2xl font-semibold'>

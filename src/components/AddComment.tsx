@@ -12,4 +12,4 @@ const AddComment = () => {
   )
 }
 
-export default AddComment
+export default AddComment;

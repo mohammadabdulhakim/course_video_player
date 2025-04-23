@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner"
+
 import "./globals.css";
 
 const spartan = League_Spartan({
@@ -24,6 +26,7 @@ export default function RootLayout({
         className={`${spartan.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
