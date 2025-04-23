@@ -1,0 +1,32 @@
+import { comments } from "@/data/dummy";
+import { Clock, Eye, Globe, LibraryBig, SquareUserRound } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import AddComment from "./AddComment";
+
+const CourseComments = () => {
+  return (
+    <div className="course-comments flex flex-col gap-4 items-start mb-30">
+      <h2 className="text-2xl font-semibold mb-3">Comments</h2>
+      {
+        comments.map((comment,index)=>(
+          <div key={crypto.randomUUID()}>
+            <div className="flex items-start gap-5">
+              <Image width={70} height={70} alt={comment.fullName} src={comment.pic} className="rounded-full" />
+              <div className="flex gap-1 flex-col">
+                <p className=" text-md ">{comment.fullName}</p>
+                <p className="text-gray-500 text-sm">{comment.date}</p>
+                <p className="text-gray-500 text-sm mt-1">{comment.comment}</p>
+              </div>
+            </div>
+            {comments.length-1 > index && <hr className="my-3 mx-4"/>}
+          </div>
+        ))
+      }
+
+      <AddComment />
+    </div>
+  );
+};
+
+export default CourseComments;

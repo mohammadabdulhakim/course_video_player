@@ -5,6 +5,7 @@ import Topics from "@/components/Topics";
 import VideoPlayer from "@/components/VideoPlayer";
 import useVideoProps from './../store/useVideoProps';
 import CourseMaterials from "@/components/CourseMaterials";
+import CourseComments from "@/components/CourseComments";
 
 export default function Home() {
   const {isVideoWide} = useVideoProps();
@@ -25,7 +26,7 @@ export default function Home() {
           <VideoPlayer />
           <Topics />        
           <CourseMaterials />
-          <div className="course-comments">Comments</div>
+          <CourseComments />
         </div>
     </main>
   );

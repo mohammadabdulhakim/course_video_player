@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 *{
-  @apply transition-all duration-100
+  @apply transition-all duration-150
 }
 
 @theme inline {
@@ -127,7 +127,7 @@
 
 
 .course-page{
-  @apply py-2 md:py-4 px-2 md:px-4 lg:px-8 gap-8 lg:gap-10 grid;
+  @apply py-2 md:py-4 px-2 md:px-4 lg:px-8 gap-8 lg:gap-14 grid;
   grid-template-columns: 1fr;
   grid-template-areas: 
   "video"

@@ -4,7 +4,7 @@ import React from "react";
 const CourseMaterials = () => {
   return (
     <div className="course-materials flex flex-col gap-4 items-start">
-      <h2 className="text-2xl font-semibold">Course Materials</h2>
+      <h2 className="text-2xl font-semibold mb-3">Course Materials</h2>
 
       <div className="w-full bg-white border-1 drop-shadow-xl hover:drop-shadow-md p-8 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
         <div>

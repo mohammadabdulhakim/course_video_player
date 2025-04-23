@@ -117,5 +117,25 @@ const topics: Topic[] = [
         ]
     },
 ]
-
-export {topics};
+const comments: CommentType[] = [
+    {
+      pic: "/images/user1.png",
+      fullName: "Mohamed Ahmed",
+      date: "Apr 20, 2025",
+      comment: "The course is excellent, the explanation is clear and easy! I really appreciated the instructor's way of breaking down complex concepts into simple, digestible pieces. This made it much easier for me to stay focused and retain the information throughout the lessons."
+    },
+    {
+      pic: "/images/user2.png",
+      fullName: "Khaled Ali",
+      date: "Apr 19, 2025",
+      comment: "I learned a lot from the lessons. Thanks for the great effort. I particularly liked how each section builds on the previous one, making the learning process feel very smooth and natural. Would love to see a more advanced version of this course in the future."
+    },
+    {
+      pic: "/images/user3.png",
+      fullName: "Ahmed Omar",
+      date: "Apr 18, 2025",
+      comment: "Some points need a bit more clarification, but overall it's a good explanation. The content is valuable and well-structured, but in a few places, I found myself rewatching parts to fully grasp the ideas. A few real-world examples or visuals might help clarify those sections even more."
+    }
+  ];
+  
+export {topics, comments};
