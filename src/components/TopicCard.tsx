@@ -12,7 +12,7 @@ import { SubTopic, Topic } from "@/types/TopicType";
 const TopicCard = ({ topic }: { topic: Topic }) => {
   const searchParams = useSearchParams();
   const { setSrc, toggleOpen, setId } = usePopupProps();
-  const currentId = Number(searchParams.get("id")) || 101;
+  const currentId = Number(searchParams.get("id")) || 100;
   const router = useRouter();
 
   const handleClick = (subTopic: SubTopic) => {
