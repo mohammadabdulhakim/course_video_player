@@ -1,10 +1,18 @@
-import { comments } from "@/data/dummy";
-import { Clock, Eye, Globe, LibraryBig, SquareUserRound } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import AddComment from "./AddComment";
+import useCommentStore from "@/store/useCommentStore";
+import {useRouter} from "next/navigation";
 
 const CourseComments = () => {
+  const {addComment, comments} = useCommentStore();
+  const router = useRouter();
+
+  const handleSubmitComment = (comment: string) =>{
+    addComment(comment);
+    router.push("#comments")
+  }
+  
   return (
     <div id="comments" className="course-comments flex flex-col gap-4 items-start mb-30">
       <h2 className="text-2xl font-semibold mb-3">Comments</h2>
@@ -24,7 +32,7 @@ const CourseComments = () => {
         ))
       }
 
-      <AddComment />
+      <AddComment placeholder="Write a Comment..." action={handleSubmitComment} />
     </div>
   );
 };

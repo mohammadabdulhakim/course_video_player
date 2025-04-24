@@ -11,6 +11,7 @@ import PopupPDF from "@/components/popups/PopupPDF";
 import PopupExam from "@/components/popups/PopupExam";
 import CourseActionButtons from "@/components/CourseActionButtons";
 import PopupBoard from "@/components/popups/PopupBoard";
+import PopupAskQuestion from "@/components/popups/PopupAskQuestion";
 
 export default function Home() {
   const { isVideoWide } = useVideoProps();
@@ -46,7 +47,7 @@ export default function Home() {
       ) : openedType == "pdf" ? (
         <PopupPDF />
       ) : openedType == "askQuestion" ? (
-        "fsdffsfdfs"
+        <PopupAskQuestion />
       ) : (
         openedType == "board" && <PopupBoard />
       )}

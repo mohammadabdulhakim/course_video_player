@@ -82,5 +82,48 @@ const comments: CommentType[] = [
   },
 ];
 
+const myQuestions = [
+  {
+    question: "What is the difference between `let`, `const`, and `var` in JavaScript?",
+    answer: "`var` is function-scoped and can be re-declared. `let` and `const` are block-scoped. `let` can be reassigned, but `const` cannot be reassigned after declaration."
+  },
+  {
+    question: "Explain how closures work in JavaScript with an example.",
+    answer: "A closure is when a function remembers variables from its outer scope even after the outer function has finished executing. Example: `function outer() { let x = 10; return function inner() { console.log(x); } }`"
+  },
+  {
+    question: "What are the main differences between synchronous and asynchronous code?",
+    answer: "Synchronous code runs line by line, blocking further execution until the current line finishes. Asynchronous code allows the program to continue running while waiting for operations like network requests or timers."
+  },
+  {
+    question: "How does the JavaScript event loop work?",
+    answer: "The event loop handles async operations by placing callback functions in a queue, executing them only when the call stack is empty, enabling non-blocking behavior in JS."
+  },
+  {
+    question: "What is a promise? How do you use `.then()` and `.catch()`?",
+    answer: "A Promise represents a value that may be available now, later, or never. Use `.then()` for success handling and `.catch()` for error handling: `fetch(url).then(res => res.json()).catch(err => console.log(err))`."
+  },
+  {
+    question: "Explain the concept of hoisting in JavaScript.",
+    answer: "Hoisting is JavaScript’s behavior of moving declarations to the top of their scope. Variables declared with `var` are hoisted with undefined value, while `let` and `const` are hoisted but not initialized."
+  },
+  {
+    question: "What is the difference between shallow copy and deep copy in JavaScript?",
+    answer: "A shallow copy copies only the first level, while a deep copy recursively copies all nested objects. `Object.assign()` and spread create shallow copies, while `structuredClone()` or recursion is used for deep copy."
+  },
+  {
+    question: "How does `this` keyword behave in different contexts?",
+    answer: "In global scope, `this` refers to the global object. In a method, it refers to the object. In strict mode, `this` can be `undefined`. Arrow functions don’t have their own `this`."
+  },
+  {
+    question: "What are higher-order functions? Give an example.",
+    answer: "Higher-order functions are functions that take other functions as arguments or return functions. Example: `arr.map(x => x * 2)`"
+  },
+  {
+    question: "Explain the difference between `==` and `===` in JavaScript.",
+    answer: "`==` compares values after type coercion. `===` compares both value and type without coercion. Example: `5 == '5'` is true, but `5 === '5'` is false."
+  }
+];
 
-export { topics, comments, users };
+
+export { topics, comments, users, myQuestions };

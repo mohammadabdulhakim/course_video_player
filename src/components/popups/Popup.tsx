@@ -19,8 +19,8 @@ const Popup = ({
 
   return (
     <>
-      <div className="fixed w-screen md:w-2/3 h-11/12 bottom-[54%] right-[50%] translate-x-[50%] translate-y-[50%] z-100 drop-shadow-2xl">
-        <div className="w-full bg-white p-2 flex justify-between items-center border-1 px-4 md:px-8">
+      <div className="fixed w-screen md:w-2/3 h-[calc(100%-20px)] bottom-[50%] right-[50%] translate-x-[50%] translate-y-[50%] z-100 drop-shadow-2xl overflow-auto">
+        <div className="w-full bg-white p-2 flex justify-between items-center border-1 px-4 md:px-8 sticky top-0 z-60">
           {btnAction && (
             <div className="flex-1">
               <Button
@@ -54,7 +54,7 @@ const Popup = ({
           </div>
         </div>
 
-        <div className="bg-white w-full h-full">{children}</div>
+        <div className="bg-white w-full min-h-full">{children}</div>
       </div>
       <span
         onClick={() => toggleOpen("")}
