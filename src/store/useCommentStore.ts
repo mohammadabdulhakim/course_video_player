@@ -1,11 +1,8 @@
-'use client';
-
 import { comments } from "@/data/dummy";
 import { toast } from "sonner";
 import { create } from "zustand";
 import moment from 'moment';
 import { CommentType } from "@/types/CommentType";
-import { useEffect, useState } from "react";
 
 type Store = {
   comments: CommentType[];
@@ -16,23 +13,18 @@ const updateLocalStorage = (comments: CommentType[]) => {
   typeof window !== undefined && localStorage.setItem("comments", JSON.stringify(comments));
 };
 
-
-
-const useCommentStore = create<Store>()((set) => {
-  const [initialComments, setInitialComments] = useState<CommentType[]>(comments);
-
-  useEffect(()=>{
-    if(typeof window !== undefined){
-      const storedComments = localStorage.getItem("comments");
-      
-      if(storedComments){
-        setInitialComments(JSON.parse(storedComments));
+const getInitialComments = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("comments")){
+        return JSON.parse(localStorage.getItem("comments") || "")
+      }else{
+        return comments
       }
   }
-  },[])
+}
 
-  return {
-    comments: initialComments,
+const useCommentStore = create<Store>()((set) => ({
+    comments: getInitialComments(),
   addComment: (text) => {
     return set((state) => {
       state.comments.unshift(
@@ -57,6 +49,6 @@ const useCommentStore = create<Store>()((set) => {
       return { comments: state.comments };
     });
   },
-}});
+}));
 
 export default useCommentStore;

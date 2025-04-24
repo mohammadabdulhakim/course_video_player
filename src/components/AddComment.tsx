@@ -1,7 +1,7 @@
 "use client";
 
 import { Textarea } from "@/components/ui/textarea"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
 const AddComment = ({placeholder, action}:{placeholder:string, action: (text:string)=> void}) => {

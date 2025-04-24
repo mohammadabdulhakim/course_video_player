@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import AddComment from "./AddComment";
+import AddComment from "@/components/AddComment";
 import useCommentStore from "@/store/useCommentStore";
 import {useRouter} from "next/navigation";
 

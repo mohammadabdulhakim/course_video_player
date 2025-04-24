@@ -3,7 +3,6 @@ import { toast } from "sonner";
 import { create } from "zustand";
 import { getSuitableMessage } from "@/constants/constants";
 import { Topic } from "@/types/TopicType";
-import { useEffect, useState } from "react";
 
 type Store = {
   topics: Topic[];
@@ -19,28 +18,28 @@ const updateLocalStorage = (topics: Topic[], newProgress: number) => {
 };
 
 
-const useTopicsStore = create<Store>()((set) => {
-  const [initialTopics, setInitialTopics] = useState<Topic[]>(topics);
-  const [initialUserProgress, setInitialUserProgress] = useState(40);
-
-  useEffect(()=>{
-    if(typeof window !== undefined){
-      const storedQuestions = localStorage.getItem("topics");
-      const storedUserProgress = localStorage.getItem("userProgress");
-      
-      if(storedQuestions){
-        setInitialTopics(JSON.parse(storedQuestions));
-      }
-
-      if(storedUserProgress){
-        setInitialUserProgress(JSON.parse(storedUserProgress));
+const getInitialTopics = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("topics")){
+        return JSON.parse(localStorage.getItem("topics") || "")
+      }else{
+        return topics
       }
   }
-  },[])
-  
-  return {
-  topics: initialTopics,
-  userProgress: initialUserProgress,
+}
+const getInitialUserProgress = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("userProgress")){
+        return JSON.parse(localStorage.getItem("userProgress") || "")
+      }else{
+        return 40
+      }
+  }
+}
+
+const useTopicsStore = create<Store>()((set) => ({
+  topics: getInitialTopics(),
+  userProgress: getInitialUserProgress(),
   markAsDone: (id) => {
     return set((state) => {
       state.topics.forEach((topic) => {
@@ -72,6 +71,6 @@ const useTopicsStore = create<Store>()((set) => {
       return { topics: state.topics, userProgress: newProgress };
     });
   },
-}});
+}));
 
 export default useTopicsStore;
