@@ -1,9 +1,11 @@
 import { topics } from "@/data/dummy";
 import { toast } from "sonner";
 import { create } from "zustand";
+import {getSuitableMessage} from "@/constants/constants"
 
 type Store = {
   topics: Topic[];
+  userProgress: number;
   markAsDone: (id: number) => void;
 };
 
@@ -16,6 +18,7 @@ const useTopicsStore = create<Store>()((set) => ({
     (localStorage.getItem("topics") &&
       JSON.parse(localStorage.getItem("topics") || "")) ||
     topics,
+  userProgress: 40,
   markAsDone: (id) => {
     return set((state) => {
       state.topics.forEach((topic, topicIndex) => {
@@ -31,14 +34,16 @@ const useTopicsStore = create<Store>()((set) => ({
       });
 
       if (state.topics) updateLocalStorage(state.topics);
-      toast("The Lesson is marked as Watched.",{
-                description: "Keep Going... Remember why you start",
+
+      const suitableMessage = getSuitableMessage(state.userProgress + 3.5);
+      toast("The Lesson is marked as Watched. " + suitableMessage?.icon,{
+                description: suitableMessage?.message || "Keep Going... Remember why you start",
                 action: {
                   label: "Done",
                   onClick:()=> console.log("Done")
                 }
               })
-      return { topics: state.topics };
+      return { topics: state.topics, userProgress: state.userProgress + 3.5 };
     });
   },
 }));
