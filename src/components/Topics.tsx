@@ -7,7 +7,7 @@ const Topics = () => {
   const {topics} = useTopicsStore();
 
   return (
-    <div className='course-topics flex items-start flex-col gap-10 '>
+    <div id='topics' className='course-topics flex items-start flex-col gap-10 '>
         <h2 className='text-2xl font-semibold'>
             Topics for This Course
         </h2>

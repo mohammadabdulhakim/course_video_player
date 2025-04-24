@@ -131,6 +131,7 @@
   grid-template-columns: 1fr;
   grid-template-areas: 
   "video"
+  "actionBtns"
   "materials"
   "topics"
   "comments"
@@ -143,12 +144,16 @@
     grid-template-rows: auto auto auto;
     grid-template-areas: 
     "video topics"
+    "actionBtns topics"
     "materials topics"
     "comments topics"
     ;
   }
 } 
 
+.course-action-buttons{
+  grid-area: actionBtns;
+}
 .course-topics{
   grid-area: topics;
 }

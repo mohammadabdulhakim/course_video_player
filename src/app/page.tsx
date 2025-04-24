@@ -9,6 +9,7 @@ import CourseComments from "@/components/CourseComments";
 import usePopupProps from "@/store/usePopupProps";
 import PopupPDF from "@/components/PopupPDF";
 import PopupExam from "@/components/PopupExam";
+import CourseActionButtons from "@/components/CourseActionButtons";
 
 export default function Home() {
   const {isVideoWide} = useVideoProps();
@@ -28,6 +29,7 @@ export default function Home() {
             "comments"`
           }:{}}>
           <VideoPlayer />
+          <CourseActionButtons />
           <Topics />        
           <CourseMaterials />
           <CourseComments />

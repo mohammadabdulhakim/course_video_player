@@ -6,7 +6,7 @@ import AddComment from "./AddComment";
 
 const CourseComments = () => {
   return (
-    <div className="course-comments flex flex-col gap-4 items-start mb-30">
+    <div id="comments" className="course-comments flex flex-col gap-4 items-start mb-30">
       <h2 className="text-2xl font-semibold mb-3">Comments</h2>
       {
         comments.map((comment,index)=>(
