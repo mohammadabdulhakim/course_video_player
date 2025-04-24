@@ -10,18 +10,22 @@ type Store = {
   markAsDone: (id: number) => void;
 };
 
-const updateLocalStorage = (topics: Topic[], newProgress:number) => {
-  localStorage.setItem("topics", JSON.stringify(topics));
-  localStorage.setItem("userProgress", JSON.stringify(newProgress));
+const updateLocalStorage = (topics: Topic[], newProgress: number) => {
+  typeof window !== undefined &&
+    localStorage.setItem("topics", JSON.stringify(topics));
+  typeof window !== undefined &&
+    localStorage.setItem("userProgress", JSON.stringify(newProgress));
 };
 
 const useTopicsStore = create<Store>()((set) => ({
   topics:
-    (localStorage.getItem("topics") &&
+    (typeof window !== undefined &&
+      localStorage.getItem("topics") &&
       JSON.parse(localStorage.getItem("topics") || "")) ||
     topics,
   userProgress:
-    (localStorage.getItem("userProgress") &&
+    (typeof window !== undefined &&
+      localStorage.getItem("userProgress") &&
       JSON.parse(localStorage.getItem("userProgress") || "")) ||
     40,
   markAsDone: (id) => {
@@ -29,12 +33,12 @@ const useTopicsStore = create<Store>()((set) => ({
       state.topics.forEach((topic) => {
         topic.subTopics.forEach((subTopic) => {
           if (subTopic.id == id) {
-            if(subTopic.type == "video"){
-              subTopic.status = "Watched"
-            }else if(subTopic.type == "exam"){
-              subTopic.status = "Done"
-            }else {
-              subTopic.status = "Read"
+            if (subTopic.type == "video") {
+              subTopic.status = "Watched";
+            } else if (subTopic.type == "exam") {
+              subTopic.status = "Done";
+            } else {
+              subTopic.status = "Read";
             }
           }
         });

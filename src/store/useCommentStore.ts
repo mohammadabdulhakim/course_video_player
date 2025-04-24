@@ -10,12 +10,12 @@ type Store = {
 };
 
 const updateLocalStorage = (comments: CommentType[]) => {
-  localStorage.setItem("comments", JSON.stringify(comments));
+  typeof window !== undefined && localStorage.setItem("comments", JSON.stringify(comments));
 };
 
 const useCommentStore = create<Store>()((set) => ({
     comments:
-    (localStorage.getItem("comments") &&
+    typeof window !== undefined && (localStorage.getItem("comments") &&
       JSON.parse(localStorage.getItem("comments") || "")) ||
       comments,
   addComment: (text) => {
