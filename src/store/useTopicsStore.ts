@@ -2,6 +2,7 @@ import { topics } from "@/data/dummy";
 import { toast } from "sonner";
 import { create } from "zustand";
 import { getSuitableMessage } from "@/constants/constants";
+import { Topic } from "@/types/TopicType";
 
 type Store = {
   topics: Topic[];
@@ -28,11 +29,13 @@ const useTopicsStore = create<Store>()((set) => ({
       state.topics.forEach((topic) => {
         topic.subTopics.forEach((subTopic) => {
           if (subTopic.id == id) {
-            subTopic.type == "video"
-              ? (subTopic.status = "Watched")
-              : subTopic.type == "exam"
-              ? (subTopic.status = "Done")
-              : (subTopic.status = "Read");
+            if(subTopic.type == "video"){
+              subTopic.status = "Watched"
+            }else if(subTopic.type == "exam"){
+              subTopic.status = "Done"
+            }else {
+              subTopic.status = "Read"
+            }
           }
         });
       });

@@ -1,4 +1,3 @@
-import usePopupProps from "@/store/usePopupProps";
 import React from "react";
 import Popup from "./Popup";
 import { getSuitableMessage } from "@/constants/constants";
@@ -7,7 +6,6 @@ import { users } from "@/data/dummy";
 import Image from "next/image";
 
 const PopupBoard = () => {
-  const { src } = usePopupProps();
   const { userProgress } = useTopicsStore();
 
   const suitableMessage = getSuitableMessage(userProgress);
@@ -31,7 +29,7 @@ const PopupBoard = () => {
 
           <div className="w-[400px] max-w-full bg-[#F5F9FA] drop-shadow-md rounded-4xl p-6 gap-4 flex flex-col">
             {users.map((user) => (
-              <div className="border-1 bg-white p-3">
+              <div key={crypto.randomUUID()} className="border-1 bg-white p-3">
                 <div className="flex items-center gap-5">
                   <Image
                     width={40}

@@ -14,7 +14,7 @@ const useCountUp = ({progress, duration = 1000}:{progress: number, duration?: nu
                 clearInterval(interval)
             }
         }, 16)
-    }, [progress])
+    }, [progress, duration])
     
     return value;
 }

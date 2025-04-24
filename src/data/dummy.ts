@@ -1,3 +1,7 @@
+
+import { CommentType } from "@/types/CommentType";
+import { Topic } from "@/types/TopicType";
+
 // const topics: Topic[] = [
 //   {
 //     id: 1,

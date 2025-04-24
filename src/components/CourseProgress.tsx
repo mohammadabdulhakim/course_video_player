@@ -1,7 +1,7 @@
 "use client"
 
 import { useAnimation, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import useCountUp from './../hooks/useCountUp';
 
 const CourseProgress = ({progress}:{progress: number}) => {

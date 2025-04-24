@@ -23,7 +23,7 @@ const PopupAskQuestion = () => {
             My Questions
           </h2>
           {myQuestions.map((q)=>(
-              <div className="border-1 bg-white p-3">
+              <div key={crypto.randomUUID()} className="border-1 bg-white p-3">
                 <p className=" text-lg mb-2 font-semibold">{q.question}</p>
                 <p className="mx-2 text-gray-700">{q.answer || "Waiting for answer..."}</p>
               </div>

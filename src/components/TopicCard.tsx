@@ -1,13 +1,13 @@
 import {
   FileQuestion,
   FileText,
-  Lock,
   LockKeyhole,
   SquarePlay,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { useRouter, useSearchParams } from "next/navigation";
 import usePopupProps from "@/store/usePopupProps";
+import { SubTopic, Topic } from "@/types/TopicType";
 
 const TopicCard = ({ topic }: { topic: Topic }) => {
   const searchParams = useSearchParams();

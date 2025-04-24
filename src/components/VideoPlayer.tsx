@@ -7,6 +7,7 @@ import useVideoProps from "@/store/useVideoProps";
 import useTopicsStore from "@/store/useTopicsStore";
 import { useSearchParams } from "next/navigation";
 import { topics } from "@/data/dummy";
+import { OnProgressProps } from "react-player/base";
 
 const VideoPlayer = () => {
   const ref = useRef<ReactPlayer | null>(null);
@@ -18,7 +19,7 @@ const VideoPlayer = () => {
   const searchParams = useSearchParams();
   const currentId = Number(searchParams.get("id")) || 100;
 
-  const isFinished = (progress: any) => {
+  const isFinished = (progress: OnProgressProps) => {
     if (ref.current) {
       const duration = ref.current.getDuration();
       const currentProgress = progress.playedSeconds;

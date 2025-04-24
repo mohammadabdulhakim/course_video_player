@@ -1,5 +1,5 @@
 
-interface SubTopic {
+export interface SubTopic {
     id: number,
     title: string,
     questions?: number,
@@ -9,10 +9,11 @@ interface SubTopic {
     status: "Watched" | "Read" | "Done" | null,
 }
 
-interface Topic {
+export interface Topic {
     id: number,
     weeks: string,
     title: string,
     desc: string,
     subTopics: SubTopic[];
 }
+

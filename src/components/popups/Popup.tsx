@@ -3,7 +3,6 @@ import { Button } from "../ui/button";
 import { XIcon } from "lucide-react";
 import usePopupProps from "@/store/usePopupProps";
 import useTopicsStore from "@/store/useTopicsStore";
-import Image from "next/image";
 
 const Popup = ({
   children,

@@ -13,10 +13,10 @@ type Store = {
 const usePopupProps = create<Store>()((set) => ({
   openedType: "",
   src: "",
-  setSrc: (newSrc) => set((state) => ({ src: newSrc })),
+  setSrc: (newSrc) => set(() => ({ src: newSrc })),
   id: 0,
-  setId: (newId) => set((state) => ({ id: newId })),
-  toggleOpen: (type) => set((state) => ({ openedType: type })),
+  setId: (newId) => set(() => ({ id: newId })),
+  toggleOpen: (type) => set(() => ({ openedType: type })),
 }))
 
 export default usePopupProps;
