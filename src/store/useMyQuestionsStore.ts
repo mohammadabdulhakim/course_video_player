@@ -15,11 +15,18 @@ const updateLocalStorage = (myQuestions: Question[]) => {
   typeof window !== undefined && localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 };
 
+const getInitialQuestions = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("myQuestions")){
+        return JSON.parse(localStorage.getItem("myQuestions") || "")
+      }else{
+        return myQuestions
+      }
+  }
+}
+
 const useMyQuestionsStore = create<Store>()((set) => ({
-    myQuestions:
-    typeof window !== undefined && (localStorage.getItem("myQuestions") &&
-      JSON.parse(localStorage.getItem("myQuestions") || "")) ||
-      myQuestions,
+    myQuestions: getInitialQuestions(),
   addQuestion: (text) => {
     return set((state) => {
       state.myQuestions.unshift(

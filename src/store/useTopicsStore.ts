@@ -17,12 +17,19 @@ const updateLocalStorage = (topics: Topic[], newProgress: number) => {
     localStorage.setItem("userProgress", JSON.stringify(newProgress));
 };
 
+
+const getInitialTopics = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("topics")){
+        return JSON.parse(localStorage.getItem("topics") || "")
+      }else{
+        return topics
+      }
+  }
+}
+
 const useTopicsStore = create<Store>()((set) => ({
-  topics:
-    (typeof window !== undefined &&
-      localStorage.getItem("topics") &&
-      JSON.parse(localStorage.getItem("topics") || "")) ||
-    topics,
+  topics: getInitialTopics(),
   userProgress:
     (typeof window !== undefined &&
       localStorage.getItem("userProgress") &&

@@ -1,5 +1,3 @@
-import { topics } from '@/data/dummy';
-import { SubTopic } from '@/types/TopicType';
 import { create } from 'zustand'
 
 type Store = {

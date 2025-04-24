@@ -13,11 +13,18 @@ const updateLocalStorage = (comments: CommentType[]) => {
   typeof window !== undefined && localStorage.setItem("comments", JSON.stringify(comments));
 };
 
+const getInitialComments = () =>{
+  if(typeof window !== undefined){
+      if(localStorage.getItem("comments")){
+        return JSON.parse(localStorage.getItem("comments") || "")
+      }else{
+        return comments
+      }
+  }
+}
+
 const useCommentStore = create<Store>()((set) => ({
-    comments:
-    typeof window !== undefined && (localStorage.getItem("comments") &&
-      JSON.parse(localStorage.getItem("comments") || "")) ||
-      comments,
+    comments: getInitialComments(),
   addComment: (text) => {
     return set((state) => {
       state.comments.unshift(
