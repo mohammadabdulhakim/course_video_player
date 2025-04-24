@@ -1,4 +1,5 @@
 import { myQuestions } from "@/data/dummy";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { create } from "zustand";
 
@@ -15,18 +16,22 @@ const updateLocalStorage = (myQuestions: Question[]) => {
   typeof window !== undefined && localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 };
 
-const getInitialQuestions = () =>{
-  if(typeof window !== undefined){
-      if(localStorage.getItem("myQuestions")){
-        return JSON.parse(localStorage.getItem("myQuestions") || "")
-      }else{
-        return myQuestions
+
+const useMyQuestionsStore = create<Store>()((set) => {
+  const [initialQuestions, setInitialQuestions] = useState<Question[]>(myQuestions);
+
+  useEffect(()=>{
+    if(typeof window !== undefined){
+      const storedQuestions = localStorage.getItem("myQuestions");
+      
+      if(storedQuestions){
+        setInitialQuestions(JSON.parse(storedQuestions));
       }
   }
-}
-
-const useMyQuestionsStore = create<Store>()((set) => ({
-    myQuestions: getInitialQuestions(),
+  },[])
+  
+  return {
+    myQuestions: initialQuestions,
   addQuestion: (text) => {
     return set((state) => {
       state.myQuestions.unshift(
@@ -49,6 +54,6 @@ const useMyQuestionsStore = create<Store>()((set) => ({
       return { myQuestions: state.myQuestions };
     });
   },
-}));
+}});
 
 export default useMyQuestionsStore;
