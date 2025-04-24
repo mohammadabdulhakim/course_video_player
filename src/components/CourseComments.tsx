@@ -17,7 +17,7 @@ const CourseComments = () => {
     <div id="comments" className="course-comments flex flex-col gap-4 items-start mb-30">
       <h2 className="text-2xl font-semibold mb-3">Comments</h2>
       {
-        comments.map((comment,index)=>(
+        comments && comments.map((comment,index)=>(
           <div key={crypto.randomUUID()}>
             <div className="flex items-start gap-5">
               <Image width={70} height={70} alt={comment.fullName} src={comment.pic} className="rounded-full" />
@@ -27,7 +27,7 @@ const CourseComments = () => {
                 <p className="text-gray-500 text-sm mt-1">{comment.comment}</p>
               </div>
             </div>
-            {comments.length-1 > index && <hr className="my-3 mx-4"/>}
+            {comments && comments.length-1 > index && <hr className="my-3 mx-4"/>}
           </div>
         ))
       }

@@ -10,11 +10,11 @@ type Store = {
 };
 
 const updateLocalStorage = (comments: CommentType[]) => {
-  typeof window !== undefined && localStorage.setItem("comments", JSON.stringify(comments));
+  typeof window != "undefined" && localStorage.setItem("comments", JSON.stringify(comments));
 };
 
 const getInitialComments = () =>{
-  if(typeof window !== undefined){
+  if(typeof window != "undefined"){
       if(localStorage.getItem("comments")){
         return JSON.parse(localStorage.getItem("comments") || "")
       }else{

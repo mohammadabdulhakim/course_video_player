@@ -12,6 +12,7 @@ import PopupExam from "@/components/popups/PopupExam";
 import CourseActionButtons from "@/components/CourseActionButtons";
 import PopupBoard from "@/components/popups/PopupBoard";
 import PopupAskQuestion from "@/components/popups/PopupAskQuestion";
+import { Suspense } from "react";
 
 export default function Home() {
   const { isVideoWide } = useVideoProps();
@@ -37,7 +38,9 @@ export default function Home() {
             : {}
         }
       >
-        <VideoPlayer />
+        <Suspense fallback={<div>Loading...</div>}>
+          <VideoPlayer />
+        </Suspense>
         <CourseActionButtons />
         <Topics />
         <CourseMaterials />

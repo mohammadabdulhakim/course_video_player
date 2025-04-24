@@ -12,11 +12,11 @@ type Store = {
 };
 
 const updateLocalStorage = (myQuestions: Question[]) => {
-  typeof window !== undefined && localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
+  typeof window != "undefined" && localStorage.setItem("myQuestions", JSON.stringify(myQuestions));
 };
 
 const getInitialQuestions = () =>{
-  if(typeof window !== undefined){
+  if(typeof window != "undefined"){
       if(localStorage.getItem("myQuestions")){
         return JSON.parse(localStorage.getItem("myQuestions") || "")
       }else{

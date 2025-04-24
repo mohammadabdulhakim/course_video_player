@@ -11,15 +11,15 @@ type Store = {
 };
 
 const updateLocalStorage = (topics: Topic[], newProgress: number) => {
-  typeof window !== undefined &&
+  typeof window != "undefined" &&
     localStorage.setItem("topics", JSON.stringify(topics));
-  typeof window !== undefined &&
+  typeof window != "undefined" &&
     localStorage.setItem("userProgress", JSON.stringify(newProgress));
 };
 
 
 const getInitialTopics = () =>{
-  if(typeof window !== undefined){
+  if(typeof window != "undefined"){
       if(localStorage.getItem("topics")){
         return JSON.parse(localStorage.getItem("topics") || "")
       }else{
@@ -28,7 +28,7 @@ const getInitialTopics = () =>{
   }
 }
 const getInitialUserProgress = () =>{
-  if(typeof window !== undefined){
+  if(typeof window != "undefined"){
       if(localStorage.getItem("userProgress")){
         return JSON.parse(localStorage.getItem("userProgress") || "")
       }else{
