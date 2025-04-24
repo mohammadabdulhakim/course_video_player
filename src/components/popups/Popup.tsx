@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { XIcon } from "lucide-react";
 import usePopupProps from "@/store/usePopupProps";
 import useTopicsStore from "@/store/useTopicsStore";
@@ -20,7 +20,7 @@ const Popup = ({
   return (
     <>
       <div className="fixed w-screen md:w-2/3 h-11/12 bottom-[54%] right-[50%] translate-x-[50%] translate-y-[50%] z-100 drop-shadow-2xl">
-        <div className="w-full bg-white p-2 flex justify-between items-center">
+        <div className="w-full bg-white p-2 flex justify-between items-center border-1 px-4 md:px-8">
           {btnAction && (
             <div className="flex-1">
               <Button
@@ -35,7 +35,11 @@ const Popup = ({
               </Button>
             </div>
           )}
-          <h3 className="text-2xl font-semibold flex-1 text-center">
+          <h3
+            className={`text-2xl font-semibold flex-1 ${
+              btnAction ? "text-center" : ""
+            }`}
+          >
             {title}
           </h3>
           <div className="flex-1 flex justify-end">
@@ -50,7 +54,7 @@ const Popup = ({
           </div>
         </div>
 
-        {children}
+        <div className="bg-white w-full h-full">{children}</div>
       </div>
       <span
         onClick={() => toggleOpen("")}

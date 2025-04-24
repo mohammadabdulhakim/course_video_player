@@ -43,6 +43,21 @@ const topics: Topic[] = [
   },
 ];
 
+const users = [
+  {
+    pic: "/images/user1.png",
+    fullName: "Mohamed Ahmed",
+  },
+  {
+    pic: "/images/user2.png",
+    fullName: "Khaled Ali",
+    },
+  {
+    pic: "/images/user3.png",
+    fullName: "Ahmed Omar",
+  }
+];
+
 const comments: CommentType[] = [
   {
     pic: "/images/user1.png",
@@ -67,6 +82,5 @@ const comments: CommentType[] = [
   },
 ];
 
-let progress = 0.6;
 
-export { topics, comments, progress };
+export { topics, comments, users };

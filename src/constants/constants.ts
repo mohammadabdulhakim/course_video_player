@@ -46,6 +46,8 @@ const encouragementMessages = [
   },
 ];
 
+
+
 const getSuitableMessage = (progress:number)=>{
     return encouragementMessages.filter((msg)=> (msg.progress <= progress)).pop();
 }
