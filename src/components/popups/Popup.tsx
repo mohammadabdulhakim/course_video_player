@@ -54,7 +54,7 @@ const Popup = ({
           </div>
         </div>
 
-        <div className="bg-white w-full min-h-full">{children}</div>
+        <div className="bg-white w-full h-full min-h-full relative">{children}</div>
       </div>
       <span
         onClick={() => toggleOpen("")}

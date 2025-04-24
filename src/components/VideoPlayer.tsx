@@ -16,7 +16,7 @@ const VideoPlayer = () => {
   const { markAsDone } = useTopicsStore();
 
   const searchParams = useSearchParams();
-  const currentId = Number(searchParams.get("id")) || 101;
+  const currentId = Number(searchParams.get("id")) || 100;
 
   const isFinished = (progress: any) => {
     if (ref.current) {

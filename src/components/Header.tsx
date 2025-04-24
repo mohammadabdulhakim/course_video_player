@@ -26,7 +26,7 @@ const Header = () => {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <h1 className="text-3xl font-semibold">Starting SEO as your Home</h1>
+      <h1 className="text-3xl font-semibold">Introduction to JavaScript and Computer Science</h1>
     </header>
   );
 };

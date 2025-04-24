@@ -7,7 +7,9 @@ const PopupPDF = () => {
 
   return (
       <Popup btnAction title="Lesson PDF File">
-        <iframe src={src} className="w-full h-full"></iframe>
+        <div className="flex items-center justify-center px-4 !h-full">
+          <iframe src={src} className="w-full h-full"></iframe>
+        </div>
       </Popup>
   );
 };

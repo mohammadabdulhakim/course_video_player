@@ -18,7 +18,7 @@ const PopupBoard = () => {
         <div className="flex items-center flex-col p-4 md:px-8 lg:px-16 gap-10 h-full">
           <div className="flex items-center justify-center flex-col gap-0.5">
             <p className="text-[#080264] text-[16px]">
-              Starting SEO as your Home
+              Introduction to JavaScript and Important Concepts
             </p>
             <p className="text-[#080264] font-bold text-[16px]">Leader Board</p>
           </div>

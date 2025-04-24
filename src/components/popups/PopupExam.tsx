@@ -9,7 +9,9 @@ const PopupExam = () => {
   return (
     <>
       <Popup btnAction title="Exam">
-        <div className="w-full h-full relative"><Image src={src || ""} alt={src || ""} fill className="object-contain" /></div>
+        <div className="flex items-center justify-center">
+          <Image src={src || ""} alt={src || ""} width={300} height={300} className="object-contain" />
+        </div>
       </Popup>
     </>
   );

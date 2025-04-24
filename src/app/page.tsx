@@ -29,6 +29,7 @@ export default function Home() {
                 gridTemplateColumns: "1fr",
                 gridTemplateAreas: `
             "video"
+            "actionBtns"
             "materials"
             "topics"
             "comments"`,
