@@ -2,6 +2,7 @@ import { comments } from "@/data/dummy";
 import { toast } from "sonner";
 import { create } from "zustand";
 import moment from 'moment';
+import { CommentType } from "@/types/CommentType";
 
 type Store = {
   comments: CommentType[];
