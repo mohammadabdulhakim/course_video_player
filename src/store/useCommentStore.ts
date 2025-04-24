@@ -1,3 +1,5 @@
+'use client';
+
 import { comments } from "@/data/dummy";
 import { toast } from "sonner";
 import { create } from "zustand";

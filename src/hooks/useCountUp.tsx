@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react'
 
 const useCountUp = ({progress, duration = 1000}:{progress: number, duration?: number}) => {
