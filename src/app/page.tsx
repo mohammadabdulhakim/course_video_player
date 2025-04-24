@@ -6,9 +6,13 @@ import VideoPlayer from "@/components/VideoPlayer";
 import useVideoProps from './../store/useVideoProps';
 import CourseMaterials from "@/components/CourseMaterials";
 import CourseComments from "@/components/CourseComments";
+import usePopupProps from "@/store/usePopupProps";
+import PopupPDF from "@/components/PopupPDF";
+import PopupExam from "@/components/PopupExam";
 
 export default function Home() {
   const {isVideoWide} = useVideoProps();
+  const {openedType} = usePopupProps();
  
   return (
     <main>
@@ -28,6 +32,16 @@ export default function Home() {
           <CourseMaterials />
           <CourseComments />
         </div>
+        {
+          openedType == "exam"
+          ? <PopupExam />
+          : openedType == "pdf"
+          ? <PopupPDF />
+          : openedType == "askQuestion"
+          ? "fsdffsfdfs"
+          : openedType == "board"
+          && "fdsfskj"
+        }
     </main>
   );
 }

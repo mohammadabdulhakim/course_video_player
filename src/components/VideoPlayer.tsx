@@ -7,7 +7,6 @@ import useVideoProps from "@/store/useVideoProps";
 import useTopicsStore from "@/store/useTopicsStore";
 import { useSearchParams } from "next/navigation";
 import { topics } from "@/data/dummy";
-import { toast } from "sonner";
 
 const VideoPlayer = () => {
     const ref = useRef<ReactPlayer | null>(null);
@@ -17,7 +16,7 @@ const VideoPlayer = () => {
     const {markAsDone} = useTopicsStore();
 
     const searchParams = useSearchParams();
-    const currentId = Number(searchParams.get("id"));
+    const currentId = Number(searchParams.get("id")) || 101;
   
     const isFinished = (progress: any) => {
       if(ref.current){
@@ -31,13 +30,6 @@ const VideoPlayer = () => {
     useEffect(()=>{
       if(watched == currentId) {
         markAsDone(currentId);
-        toast("The Lesson is marked as Watched.",{
-          description: "Keep Going... Remember why you start",
-          action: {
-            label: "Done",
-            onClick:()=> console.log("Done")
-          }
-        })
       }
     },[watched])
 

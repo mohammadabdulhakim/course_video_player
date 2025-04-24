@@ -7,10 +7,10 @@ const topics: Topic[] = [
     subTopics: [
       { id: 101, title: "Introduction", type: "video", src: "https://www.youtube.com/watch?v=54ls40kio2w", status: null },
       { id: 102, title: "Course Overview", type: "video", src: "https://www.youtube.com/watch?v=onGVDbyojL0", status: null },
-      { id: 103, title: "Course Overview Exam", type: "exam", src: "", questions: 0, durationInMin: 10, status: null },
-      { id: 104, title: "Course Exercise / Reference Files", type: "pdf", src: "", status: null },
+      { id: 103, title: "Course Overview Exam", type: "exam", src: "/exam.png", questions: 0, durationInMin: 10, status: null },
+      { id: 104, title: "Course Exercise / Reference Files", type: "pdf", src: "/azkar.pdf", status: null },
       { id: 105, title: "Code Editor Installation (Optional)", src: "https://www.youtube.com/watch?v=IUqQJpNUakA", type: "video", status: null },
-      { id: 106, title: "Embedding PHP in HTML", type: "pdf", src: "", status: null },
+      { id: 106, title: "Embedding PHP in HTML", type: "pdf", src: "/azkar.pdf", status: null },
     ],
   },
   {
@@ -21,7 +21,7 @@ const topics: Topic[] = [
     subTopics: [
       { id: 201, title: "Defining Functions", type: "video", src: "https://www.youtube.com/watch?v=Nguc6-TSnZ0", status: null },
       { id: 202, title: "Function Parameters", type: "video", src: "https://www.youtube.com/watch?v=G0jR9QJDOvM", status: null },
-      { id: 203, title: "Return Values from functions", type: "exam", questions: 2, src: "", durationInMin: 15, status: null },
+      { id: 203, title: "Return Values from functions", type: "exam", src: "/exam.png", questions: 2, durationInMin: 15, status: null },
       { id: 204, title: "Global Variable and Scope", type: "video", src: "https://www.youtube.com/watch?v=G0jR9QJDOvM", status: null },
       { id: 205, title: "Newer way of writing a constant", type: "video", src: "https://www.youtube.com/watch?v=WXcZiNcW-gc", status: null },
       { id: 206, title: "Constants", type: "video", src: "https://www.youtube.com/watch?v=3hsSq3nrx80", status: null },
@@ -35,7 +35,7 @@ const topics: Topic[] = [
     subTopics: [
       { id: 301, title: "Defining Functions", type: "video", src: "https://www.youtube.com/watch?v=78Hb51j-sO4", status: null },
       { id: 302, title: "Function Parameters", type: "video", src: "https://www.youtube.com/watch?v=M_TD3-GF6AM", status: null },
-      { id: 303, title: "Return Values from functions", type: "exam", questions: 2, src: "", durationInMin: 15, status: null },
+      { id: 303, title: "Return Values from functions", type: "exam", src: "/exam.png", questions: 2, durationInMin: 15, status: null },
       { id: 304, title: "Global Variable and Scope", type: "video", src: "https://www.youtube.com/watch?v=vDsk9s9azFQ", status: null },
       { id: 305, title: "Newer way of writing a constant", type: "video", src: "https://www.youtube.com/watch?v=SKgv1occ0CE", status: null },
       { id: 306, title: "Constants", type: "video", src: "https://www.youtube.com/watch?v=bup3QZNx4MQ", status: null },

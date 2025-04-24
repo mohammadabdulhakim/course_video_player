@@ -7,15 +7,23 @@ import {
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { useRouter, useSearchParams } from "next/navigation";
+import usePopupProps from "@/store/usePopupProps";
 
 const TopicCard = ({ topic }: { topic: Topic }) => {
   const searchParams = useSearchParams();
-  const currentId = Number(searchParams.get("id"));
+  const { setSrc, toggleOpen, setId } = usePopupProps();
+  const currentId = Number(searchParams.get("id")) || 101;
   const router = useRouter();
 
   const handleClick = (subTopic: SubTopic) => {
     if (subTopic.type == "video") {
       router.push(`?id=${subTopic.id}`);
+    } else {
+      setSrc(subTopic.src);
+      setId(subTopic.id);
+      setTimeout(() => {
+        toggleOpen(subTopic.type);
+      }, 50);
     }
   };
   return (

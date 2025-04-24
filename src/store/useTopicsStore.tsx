@@ -1,4 +1,5 @@
 import { topics } from "@/data/dummy";
+import { toast } from "sonner";
 import { create } from "zustand";
 
 type Store = {
@@ -30,6 +31,13 @@ const useTopicsStore = create<Store>()((set) => ({
       });
 
       if (state.topics) updateLocalStorage(state.topics);
+      toast("The Lesson is marked as Watched.",{
+                description: "Keep Going... Remember why you start",
+                action: {
+                  label: "Done",
+                  onClick:()=> console.log("Done")
+                }
+              })
       return { topics: state.topics };
     });
   },
